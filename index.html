@@ -15,12 +15,63 @@
 
         const rootElement=document.getElementById('root');
 
-        const element=<div className="container"> Hello World with jsx </div>
+       //calling errorDisplay function call here 
+
+       const errorDisplay=(message)=>
+       <div style={{color:"red", backgroundColor:"blue"}}>
+        {message}
+       </div>;
+
+
+       ReactDOM.render(<errorDisplay message="There aren't androids here" />, rootElement);
+
+        //const element=<div className={name}> Hello World with jsx {name} </div>
+        // const inputForm=React.createElement(
+        //         "form",
+        //         {
+        //             target:"_blank",
+        //             action:"https://google.com/search"
+        //         },
+        //         React.createElement("div", null, "Enter Input and click Search "),
+        //         React.createElement('input',{name:"q", className:"test"}),
+        //         React.createElement(Button,{label:"Search"})
+
+        //     )
      
+        // function Button(props) {
+            
+          //  return <button type="button">{props.level}</button>
+           
+
+        //   return React.createElement(
+        //       "button",
+        //       {
+        //           type:"button"
+        //       },
+        //       props.label
+        //   );
+        // }
+
+
+        // const inputForm=<form target="_blank" action="https://google.com/search">
+        // <div>Enter input and click Search </div>
+        // <input name="q" className="Search" />
+        // <Button label="click me and test" />
+
+        // </form>
+
+
+        // function Button(props) {
+        //     return <button type="submit">{props.label}</button>
+        // }
+
+
+        // const RandomValue=()=>
+        //      <div> {Math.floor(Math.random()*100)} </div>
         
 
-    
-        ReactDOM.render(element,rootElement);
+        // ReactDOM.render(<RandomValue />, rootElement);
+        //ReactDOM.render(<Button test="Hey test it please" />,rootElement);
 
         // const element=document.createElement('div');
         // element.textContent="Hello World";
