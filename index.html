@@ -10,22 +10,16 @@
     <div id="root"></div>
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
 
         const rootElement=document.getElementById('root');
-        //creating react element 
 
-        const element=React.createElement('div',{
-            // children:["Hello World","Goodby World Man"],
-            children:React.createElement('span',null, 'Hello', 'World'),
-            className:"container"
-        },
+        const element=<div className="container"> Hello World with jsx </div>
+     
         
-        //'Hello World', " Goodbye World"
-        
-        );
-        //Calling react rendering Method here 
-        console.log(element);
+
+    
         ReactDOM.render(element,rootElement);
 
         // const element=document.createElement('div');
