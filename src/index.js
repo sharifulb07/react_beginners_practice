@@ -4,21 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const message=<div>Hello World</div>
+function CharacterCount({text}){
 
-const Message=props=> <div className='container'>{props.msg}</div>
+  const len=text.length? text.length:'No';
+  return(
+   
+    <div>
+     { `The ${text}has only `} {" "}
+     <div>{text.length ? <strong> {text.length} </strong>:'No string'}</div>
+    </div>
+  )
+}
+
+
 
 const element=(
-  <>
-    <Message msg="Go ahead man and do fast yeap dooo" />
-    {Message({msg:"Hey hello world"})}
-    {Message({msg:"Hey hello world"})}
-    {Message({msg:"Hey hello world"})}
-    {Message({msg:"Hey hello world"})}
-    {Message({msg:"Hey hello world"})}
-  </>
-)
+  <React.Fragment>
 
+    <CharacterCount text="My practice is going on here " />
+    <CharacterCount text='' />
+
+  </React.Fragment>
+)
 
 
 ReactDOM.render(
