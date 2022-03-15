@@ -4,14 +4,31 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const message=<div>Hello World</div>
+
+const Message=props=> <div className='container'>{props.msg}</div>
+
+const element=(
+  <>
+    <Message msg="Go ahead man and do fast yeap dooo" />
+    {Message({msg:"Hey hello world"})}
+    {Message({msg:"Hey hello world"})}
+    {Message({msg:"Hey hello world"})}
+    {Message({msg:"Hey hello world"})}
+    {Message({msg:"Hey hello world"})}
+  </>
+)
+
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+
+element,
+
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
