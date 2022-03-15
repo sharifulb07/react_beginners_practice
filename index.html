@@ -15,70 +15,19 @@
 
         const rootElement=document.getElementById('root');
 
-       //calling errorDisplay function call here 
+        const MaybeDisplay=({errorMessage})=>
+        <div>
+        {errorMessage && <errorDisplay message={errorMessage} />}
 
-       const errorDisplay=(message)=>
-       <div style={{color:"red", backgroundColor:"blue"}}>
-        {message}
-       </div>;
-
-
-       ReactDOM.render(<errorDisplay message="There aren't androids here" />, rootElement);
-
-        //const element=<div className={name}> Hello World with jsx {name} </div>
-        // const inputForm=React.createElement(
-        //         "form",
-        //         {
-        //             target:"_blank",
-        //             action:"https://google.com/search"
-        //         },
-        //         React.createElement("div", null, "Enter Input and click Search "),
-        //         React.createElement('input',{name:"q", className:"test"}),
-        //         React.createElement(Button,{label:"Search"})
-
-        //     )
-     
-        // function Button(props) {
-            
-          //  return <button type="button">{props.level}</button>
-           
-
-        //   return React.createElement(
-        //       "button",
-        //       {
-        //           type:"button"
-        //       },
-        //       props.label
-        //   );
-        // }
+        </div>
 
 
-        // const inputForm=<form target="_blank" action="https://google.com/search">
-        // <div>Enter input and click Search </div>
-        // <input name="q" className="Search" />
-        // <Button label="click me and test" />
+        const errorDisplay=({message})=>
+        <div style={{color:'red', backgroundColor:"yellow"}}>
+            {message}
+        </div>
 
-        // </form>
-
-
-        // function Button(props) {
-        //     return <button type="submit">{props.label}</button>
-        // }
-
-
-        // const RandomValue=()=>
-        //      <div> {Math.floor(Math.random()*100)} </div>
-        
-
-        // ReactDOM.render(<RandomValue />, rootElement);
-        //ReactDOM.render(<Button test="Hey test it please" />,rootElement);
-
-        // const element=document.createElement('div');
-        // element.textContent="Hello World";
-        // element.className="Hello_World";
-
-        // rootElement.appendChild(element);
-
+        ReactDOM.render(<MaybeDisplay errorMessage={(Math.random()>0.2)? "is not good":''} />, rootElement);
       
 
 
