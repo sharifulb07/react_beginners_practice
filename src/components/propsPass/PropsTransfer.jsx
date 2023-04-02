@@ -1,0 +1,49 @@
+import { getImageUrl } from "./Utils"
+
+
+export function Profile(){
+    return(
+        <Card>
+            <Avatar
+            size={100}
+            person={{
+                name:'Katsuko Saruhashi',
+                imageId:'YfeOqp2'
+
+            }}
+
+            />
+
+        </Card>
+    )
+}
+
+function Avatar({person, size}){
+    return(
+        <img
+        className="avatar"
+        src={getImageUrl(person)}
+        alt={person.name}
+        height={size}
+        width={size}
+        />
+
+
+    )
+}
+
+
+
+
+
+
+
+
+
+function Card({children}){
+    return(
+        <div className="card">
+            {children}
+        </div>
+    )
+}
